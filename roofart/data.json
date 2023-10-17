@@ -1,0 +1,58 @@
+{
+    "1": {
+        "amount": "100",
+        "date": "2023-03-10",
+        "agent": "Anna",
+        "comm": "Investment",
+        "bank": "fisrt",
+        "type": "add"
+    },
+    "2": {
+        "amount": "10",
+        "date": "2023-03-05",
+        "agent": "Anna",
+        "comm": "Investment",
+        "bank": "second",
+        "type": "add"
+    },
+    "3": {
+        "amount": "10",
+        "data": "2023-03-11",
+        "agent": "Anna",
+        "comm": "Investment",
+        "bank": "first",
+        "type": "minus"
+    },
+    "4": {
+        "amount": "100",
+        "date": "2023-03-03",
+        "agent": "Anna",
+        "comm": "Investment",
+        "bank": "fisrt",
+        "type": "add"
+    },
+    "5": {
+        "amount": "100",
+        "date": "2023-03-05",
+        "agent": "Anna",
+        "comm": "Investment",
+        "bank": "third",
+        "type": "add"
+    },
+    "6": {
+        "amount": "100",
+        "date": "2023-03-02",
+        "agent": "Anna",
+        "comm": "Sallary",
+        "bank": "second",
+        "type": "add"
+    },
+    "7": {
+        "amount": "10",
+        "date": "2023-03-10",
+        "agent": "Anna",
+        "comm": "Investment",
+        "bank": "second",
+        "type": "add"
+    }
+}

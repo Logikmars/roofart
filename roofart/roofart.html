@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>RoofArt</title>
+	<link href="style.css" rel="stylesheet" type="text/css">
+</head>
+<body style="background: rgb(24, 29, 31)">
+	<header class="top">
+		<nav>
+			<input type="checkbox" id="checkbox-menu">
+			<label for="checkbox-menu">
+				<ul class="menu touch">
+					<li><h1 class="logo">RoofArt</h1></li>
+					<button class="custom-btn add" id="open_pop_add">+ Доход</button>
+					<button class="custom-btn min" id="open_pop_min">- Расход</button>
+					<button class = "custom-btn tran" id="open_pop_tran">~ Перевод</button>
+				</ul>
+				<span class="toggle">☰</span>
+			</label>
+		</nav>
+	</header>
+	<!-- Первый поп-ап для дохода -->
+	<div class="pop_up" id="pop_up">
+		<div class="pop_up_container">
+			<div class="pop_up_body" id="pop_up_body">
+				<p>Доход</p>
+				<form method="post" action="action.php">
+					<!-- Везде где стоит реквайрд, это обязательные поля -->
+					<div class="custom-select">
+						<select name="select" id="H">
+							<option disabled>Выберите счёт</option>
+							<option value="1">Счёт А</option>
+							<option value="2">Счёт Б</option>
+							<option value="3">Счёт В</option>
+						</select>
+					</div>
+					<input type="float" id="name" name="name" required placeholder="Сумма">
+					<input type="date" id="data" name="data" required placeholder="Дата">
+					<input type="text" name="message" id="message" required placeholder="Контрагент">
+					<input type="text" name="comm" id="comm" placeholder="Примечание">
+
+					<button name="submit" id="submit" value="Submit">Доход</button>
+				</form>
+				<div class="pop_up_close" id="pop_up_close">&#10006</div>
+			</div>
+		</div>
+	</div>
+	<!-- Второй поп-ап для расходов -->
+	<div class="pop_up_min" id="pop_up_min">
+		<div class="pop_up_container_min">
+			<div class="pop_up_body_min" id="pop_up_body_min">
+				<p>Расход</p>
+				<form method="post" action="min.php">
+					<div class="custom-select">
+						<select name="select" id="H">
+							<option disabled>Выберите счёт</option>
+							<option value="1">Счёт А</option>
+							<option value="2">Счёт Б</option>
+							<option value="3">Счёт В</option>
+						</select>
+					</div>
+					<input type="float" name="name" placeholder="Сумма">
+					<input type="date" name="data" placeholder="Дата">
+					<input type="text" name="message" placeholder="Контрагент">
+					<input type="text" name="comm" placeholder="Примечание">
+					<button name="submit" id="submit" value="Submit">Расход</button>
+				</form>
+				<div class="pop_up_close_min" id="pop_up_close_min">&#10006</div>
+			</div>
+		</div>
+	</div>
+	<!-- Третий поп-ап для переводов -->
+	<div class="pop_up_tran" id="pop_up_tran">
+		<div class="pop_up_container_tran">
+			<div class="pop_up_body_tran" id="pop_up_body_tran">
+				<p>Перевод</p>
+				<form method="post" action="tran.php">
+					<div class="custom-select">
+						<select name="select" id="H">
+							<option disabled>Выберите счёт</option>
+							<option value="1">Счёт А</option>
+							<option value="2">Счёт Б</option>
+							<option value="3">Счёт В</option>
+						</select>
+					</div>
+					<div class="custom-select">
+						<select name="selectt" id="H">
+							<option disabled>Выберите счёт</option>
+							<option value="11">Счёт А</option>
+							<option value="22">Счёт Б</option>
+							<option value="33">Счёт В</option>
+						</select>
+					</div>
+					<input type="float" name="name" placeholder="Сумма">
+					<input type="date" name="data" placeholder="Дата">
+					<input type="text" name="message" placeholder="Примечание">
+					<button name="submit" id="submit" value="Submit">Перевод</button>
+				</form>
+				<div class="pop_up_close_tran" id="pop_up_close_tran">&#10006</div>
+			</div>
+		</div>
+	</div>
+	<!-- Начинаем верстку основного раздела сайта -->
+	<div class="all_body">
+		<button class="journal custom-btn" id="open_jor" onclick="OpenJournal()">Журнал</button>
+		<button class="analytics custom-btn" id="open_anlt" onclick="OpenAnalytics()">Аналитика</button>
+		<div class="wallet">
+			<p class="amount">Всего на счетах</p>
+			<div id="wallet">
+				
+			</div>
+			<hr>
+			<div class="ceparately_wallet">
+				<p class="ceparately">На первом счете </p>
+				<div id="ceparately_one">
+					
+				</div>
+				<p class="ceparately">На втором счете</p>
+				<div id="ceparately_two">
+					
+				</div>
+				<p class="ceparately">На третьем счете</p>
+				<div id="ceparately_three">
+					
+				</div>
+			</div>
+			<hr>
+		</div>
+		<div class="transaction">
+			<div class="analytics_block" id="div1">
+				<!-- <svg width="500" height="500">
+					<rect x="50" y="50" width="100" height="200" fill="red"></rect>
+					<rect x="200" y="100" width="100" height="150" fill="green"></rect>
+					<rect x="350" y="150" width="100" height="100" fill="blue"></rect>
+				</svg>
+				<h1>ДОХОДЫ НЕ ОЧЕНЬ, НАДО РАБОТАТЬ!!!!</h1> -->
+				<div class="an_name">
+					<h1>Аналитика</h1>
+				</div>
+				<!-- Круговая диаграмма -->
+				<canvas id="myChart" class="myChart"></canvas>
+			</div>
+			<div class="hidden" id="div2">
+				<div class="transaction-card info">
+					<h3>Дата</h3>
+					<h3>Сумма</h3>
+					<h4>Контрагент</h4>
+					<h4>Комментраий</h4>
+					<h4>Счёт</h4>
+					<h4>Тип</h4>
+				</div>
+				<div class="wrap" id="goods">
+					
+				</div>
+			</div>
+		</div>
+	</div>
+	<script src="jquery-3.6.4.min.js"></script>
+	<script src="output.js"></script>
+	<script src="main.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/chart.js@4.2.1/dist/chart.umd.min.js"></script>
+	<script type="text/javascript">
+		let ctx = document.querySelector('#meChart').getContext('2d');
+		let myChart = new Chart(ctx, {
+			type: 'line',
+			data: {
+				labels: [1, 2, 3, 4, 5],
+				datasets: [{
+					label: 'Students',
+					data: [50, 40, 25, 30, 15],
+					backgroundColor: ['white'],
+					borderColor: [
+						'green',
+						'magenta',
+						'yellow',
+						'blue',
+						'black',
+					],
+					borderWidth: 4 
+				}] 
+			},
+			oprions: {
+
+			}
+		})
+	</script>
+</body>
+</html>

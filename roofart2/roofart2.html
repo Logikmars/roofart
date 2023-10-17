@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<title>Roofart2</title>
+	<link rel="stylesheet" type="text/css" href="style2.css">
+</head>
+<body style="background: rgb(24, 29, 31)">
+	<header class="top">
+		<nav>
+			<input type="checkbox" id="checkbox-menu">
+			<label for="checkbox-menu">
+				<ul class="menu touch">
+					<li><h1 class="logo">RoofArt</h1></li>
+					<button class="custom-btn add" id="open_pop_add">+ Доход</button>
+					<button class="custom-btn min" id="open_pop_min">- Расход</button>
+					<button class = "custom-btn tran" id="open_pop_tran">~ Перевод</button>
+				</ul>
+				<span class="toggle">☰</span>
+			</label>
+		</nav>
+	</header>
+	<!-- Первый поп-ап для дохода -->
+	<div class="pop_up" id="pop_up">
+		<div class="pop_up_container">
+			<div class="pop_up_body" id="pop_up_body">
+				<p>Доход</p>
+				<form method="post" action="action2.php">
+					<!-- Везде где стоит реквайрд, это обязательные поля -->
+					<div class="custom-select">
+						<select name="select" id="H">
+							<option disabled>Выберите счёт</option>
+							<option value="1">Счёт А</option>
+							<option value="2">Счёт Б</option>
+							<option value="3">Счёт В</option>
+						</select>
+					</div>
+					<input type="float" id="name" name="name" required placeholder="Сумма">
+					<input type="date" id="data" name="data" required placeholder="Дата">
+					<input type="text" name="message" id="message" required placeholder="Контрагент">
+					<input type="text" name="comm" id="comm" placeholder="Примечание">
+
+					<button name="type">Доход</button>
+				</form>
+				<div class="pop_up_close" id="pop_up_close">&#10006</div>
+			</div>
+		</div>
+	</div>
+	<!-- Второй поп-ап для расходов -->
+	<div class="pop_up_min" id="pop_up_min">
+		<div class="pop_up_container_min">
+			<div class="pop_up_body_min" id="pop_up_body_min">
+				<p>Расход</p>
+				<form method="post" action="min2.php">
+					<div class="custom-select">
+						<select name="select" id="H">
+							<option disabled>Выберите счёт</option>
+							<option value="1">Счёт А</option>
+							<option value="2">Счёт Б</option>
+							<option value="3">Счёт В</option>
+						</select>
+					</div>
+					<input type="float" name="name" placeholder="Сумма">
+					<input type="date" name="data" placeholder="Дата">
+					<input type="text" name="message" placeholder="Контрагент">
+					<input type="text" name="comm" placeholder="Примечание">
+					<button>Расход</button>
+				</form>
+				<div class="pop_up_close_min" id="pop_up_close_min">&#10006</div>
+			</div>
+		</div>
+	</div>
+	<!-- Третий поп-ап для переводов -->
+	<div class="pop_up_tran" id="pop_up_tran">
+		<div class="pop_up_container_tran">
+			<div class="pop_up_body_tran" id="pop_up_body_tran">
+				<p>Перевод</p>
+				<form method="post" action="tran2.php">
+					<div class="custom-select">
+						<select name="select" id="H">
+							<option disabled>Выберите счёт</option>
+							<option value="1">Счёт А</option>
+							<option value="2">Счёт Б</option>
+							<option value="3">Счёт В</option>
+						</select>
+					</div>
+					<div class="custom-select">
+						<select name="selectt" id="H">
+							<option disabled>Выберите счёт</option>
+							<option value="11">Счёт А</option>
+							<option value="22">Счёт Б</option>
+							<option value="33">Счёт В</option>
+						</select>
+					</div>
+					<input type="float" name="name" placeholder="Сумма">
+					<input type="date" name="data" placeholder="Дата">
+					<input type="text" name="message" placeholder="Примечание">
+					<button>Перевод</button>
+				</form>
+				<div class="pop_up_close_tran" id="pop_up_close_tran">&#10006</div>
+			</div>
+		</div>
+	</div>
+	<script src="main2.js"></script>
+</body>
+</html>
